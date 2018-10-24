@@ -1,6 +1,7 @@
 /**
 *Created by Liam Salazar
 *Branch Table
+*This relation has data about the different airline branch locations
 **/
 CREATE TABLE branch (
     branch_ID INT(3) AUTO_INCREMENT PRIMARY KEY,
