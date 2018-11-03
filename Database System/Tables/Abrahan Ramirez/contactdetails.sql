@@ -13,3 +13,6 @@ create table Contact_Details(
 	State VARCHAR(20) NOT NULL,
 	CONSTRAINT fk_State FOREIGN KEY(State) REFERENCES State(StID)
 );
+
+
+insert into Contact_Details Values(1, 'jimmyjohn@gmail.com', '949-232-4295', 'Bumpy RD',
