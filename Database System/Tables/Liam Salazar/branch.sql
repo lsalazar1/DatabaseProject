@@ -14,7 +14,9 @@ CREATE TABLE branch (
     REFERENCES States(StID)  
 );
 
-INSERT INTO branch(936, 'Panther Regional', '100 University Dr.', 'Prairie View', 'TX');
-INSERT INTO branch(913, 'Greater Kansas City', '2601 Holmes St.', 'Kansas City', 'KS');
-INSERT INTO branch(599, 'River Park Center', '71 E Via la Plata', 'Fresno', 'CA');
-INSERT INTO branch(216, 'Katy', '10326 Hartfield Bluff Ln.', 'Cypress', 'TX');
+INSERT INTO branch VALUES(936, 'Panther Regional Headquarters', '100 University Dr.', 'Prairie View', 'TX');
+INSERT INTO branch VALUES(913, 'Greater Kansas City Branch', '2601 Holmes St.', 'Kansas City', 'KS');
+INSERT INTO branch VALUES(599, 'River Park Branch', '71 E Via la Plata', 'Fresno', 'CA');
+INSERT INTO branch VALUES(216, 'Katy Branch', '10326 Hartfield Bluff Ln.', 'Cypress', 'TX');
+INSERT INTO branch VALUES (570, 'Dunder Mifflen Regional Branch', '1725 Slough Avenue', 'Scranton', 'PA');
+INSERT INTO branch VALUES(978, 'Littleton Commons Branch', '550 King St.', 'Littleton', 'MA');
