@@ -153,6 +153,9 @@ INSERT INTO employees VALUES ('E5', 'Michael Scott', 570, 'Regional Manager', 'm
 INSERT INTO employees VALUES ('E6', 'Lisa Ann', 570, 'Marketing Manager', 'lisa.ann@pvair.com', '570-459-4563');
 INSERT INTO employees VALUES ('E7', 'Mary Livingston', 978, 'Backend Developer', 'mary.livingston@pvair.com', '978-459-8909');
 INSERT INTO employees VALUES ('E8', 'Leonard Guy', 978, 'Backend Developer', 'leonard.guy@pvair.com', '978-459-4785');
+INSERT INTO employees VALUES ('E9', 'Daniel Chadwick', 978, 'Backend Developer', 'Daniel.chadwick@pvair.com', '978-459-9456');
+INSERT INTO employees VALUES ('E10', 'Liam Salazar', 599, 'Janitor', 'liam.salazar@pvair.com', '599-459-8453');
+INSERT INTO employees VALUES ('E11', 'Hubert Joly', 599, 'Frontend Developer', 'hubert.joly@pvair.com', '599-459-9011');
 
 INSERT INTO airCrafts VALUES (100, "N379AA", 245, "Boeing", "2004-03-23");
 INSERT INTO airCrafts VALUES (101, "N820AL", 372, "Airbus", "2011-06-02");
