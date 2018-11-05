@@ -1,19 +1,20 @@
 /*  
-This table shows the ticket prices for departing and returning flights.
-
+*Fare attribute didn't have a datatype
+*Varchar values need to be enclosed within single quotes
 */
 
 CREATE TABLE AirFare (
-Airfair_ID INT,
+Airfare_ID INT,
 DepartFrom Varchar(32),
 ArriveTo Varchar(32),
-Fare, 
+Fare INT, 
 PRIMARY KEY(Airfair_ID)
 );
 
-//Change AirFare values, these numbers are place holders. 
-INSERT INTO AirFare VALUES (1, Atlanta, Miami, 128);
-INSERT INTO AirFare VALUES (2, Los Angeles, Houston, 299);
-INSERT INTO AirFare VALUES (3, Utah, Atlanta, 172);
-INSERT INTO AirFare VALUES (4, New York, North Carolina, 103);
-INSERT INTO AirFare VALUES (5, Las Vegas, Colorado, 220);
+
+INSERT INTO AirFare VALUES (1, 'Atlanta', 'Miami', 128);
+INSERT INTO AirFare VALUES (2, 'Los Angeles', 'Houston', 112);
+INSERT INTO AirFare VALUES (3, 'Salt Lake City', 'Atlanta', 197);
+INSERT INTO AirFare VALUES (4, 'New York City', 'Charlotte', 159);
+INSERT INTO AirFare VALUES (5, 'Las Vegas', 'Denver', 154);
+INSERT INTO AirFare VALUES (6, 'Houston', 'Toronto', 547);
