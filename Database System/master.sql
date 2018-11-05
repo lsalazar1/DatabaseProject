@@ -3,9 +3,26 @@
 * and paste those SQL commands here to create the database
 */
 
-CREATE DATABASE pvairlines;
+CREATE DATABASE pvairways;
 
-USE DATABASE pvairlines;
+USE pvairways;
+
+-- Creates table for different countries our companies travels to
+CREATE TABLE countries (
+    country_id VARCHAR(3) PRIMARY KEY NOT NULL,
+    country VARCHAR(25) NOT NULL
+);
+
+-- Creates table of states
+CREATE TABLE states( 
+    StID VARCHAR(3) PRIMARY KEY,
+    StateName Varchar(32),
+    Country Varchar(32),
+                   
+                   
+    CONSTRAINT fk_Country FOREIGN KEY (Country)
+    REFERENCES countries (country_id)
+);
 
 -- Creates Contact Details Table
 create table Contact_Details(
@@ -27,11 +44,10 @@ create table Discounts(
 
 -- Creates table for different types of air fares available
 CREATE TABLE AirFare (
-Airfare_ID INT,
+Airfare_ID INT PRIMARY KEY,
 DepartFrom Varchar(32),
 ArriveTo Varchar(32),
-Fare INT, 
-PRIMARY KEY(Airfair_ID)
+Fare INT 
 );
 
 -- Create table for flight schedules
@@ -45,7 +61,7 @@ ArriveTime Varchar(10) NOT NULL
 
 -- Creates table for different branch offices
 CREATE TABLE branch (
-    branch_ID INT(3) AUTO_INCREMENT PRIMARY KEY,
+    branch_ID INT(3) PRIMARY KEY,
     Location VARCHAR(50) NOT NULL,                  -- Location means name of branch (Ex. Copperfield)
     Address VARCHAR(50) NOT NULL,
     City VARCHAR(30) NOT NULL,
@@ -55,15 +71,9 @@ CREATE TABLE branch (
     REFERENCES states(StID)  
 );
 
--- Creates table for different countries our companies travels to
-CREATE TABLE countries (
-    country_id VARCHAR(3) PRIMARY KEY NOT NULL,
-    country VARCHAR(25) NOT NULL
-);
-
 -- Creates table for all employees in our company
 CREATE TABLE employees(
-    employee_ID VARCHAR(4) AUTO_INCREMENT PRIMARY KEY,
+    employee_ID VARCHAR(4) PRIMARY KEY,
     fullName VARCHAR(50) NOT NULL,
     Branch INT(3) NOT NULL,
     Position VARCHAR(50) NOT NULL,
@@ -88,5 +98,7 @@ CREATE TABLE Route(
     RtID INT PRIMARY KEY,
     Airport Varchar(32) NOT NULL,
     Destination Varchar(32) NOT NULL,
-    RouteCode Varchar(16) NOT NULL UNIQUE,
+    RouteCode Varchar(16) NOT NULL UNIQUE
 );
+
+/* Insert different values into their respective tables */
