@@ -11,7 +11,7 @@ CREATE TABLE branch (
     State_ID VARCHAR(2),
 
     CONSTRAINT fk_BranchState FOREIGN KEY (State_ID)
-    REFERENCES States(StID)  
+    REFERENCES states(StID)  
 );
 
 INSERT INTO branch VALUES(936, 'Panther Regional Headquarters', '100 University Dr.', 'Prairie View', 'TX');
