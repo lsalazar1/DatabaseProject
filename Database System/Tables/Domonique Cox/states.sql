@@ -19,4 +19,4 @@ INSERT INTO states VALUES ('CA', 'California','USA');
 INSERT INTO states VALUES ('GA', 'Atlanta', 'USA');
 INSERT INTO states VALUES ('UT', 'Utah', 'USA');
 INSERT INTO states VALUES ('ON', 'Ontario', 'CAN')
-INSERT INTO states VALUES ('Leinster', 'LEN', 'IRE';)
+INSERT INTO states VALUES ('LEN', 'Leinster', 'IRE';)
