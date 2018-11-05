@@ -4,15 +4,11 @@ departing and final destinations.
 */
 
 CREATE TABLE FlightSchedule (
-FS_ID(4),
+FS_ID INT(4) PRIMARY KEY,
 Depart Varchar(3) NOT NULL,
 Arrive Varchar (3) NOT NULL,
-DepartTime Varchar(10),
-ArriveTime Varchar(10),
-
-
-
-PRIMARY KEY (FS_ID)
+DepartTime Varchar(10) NOT NULL,
+ArriveTime Varchar(10) NOT NULL
 );
 
 INSERT INTO FlightSchedule VALUES (2144, 'ATL','MIA','10:30 AM','2:30 PM');
