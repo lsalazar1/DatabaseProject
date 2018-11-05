@@ -10,8 +10,8 @@ create table Contact_Details(
 	Email VARCHAR(25) NOT NULL,
 	Cell VARCHAR(16) NOT NULL,
 	Street VARCHAR(64),
-	State VARCHAR(20) NOT NULL,
-	CONSTRAINT fk_State FOREIGN KEY(State) REFERENCES State(StID)
+	States VARCHAR(20) NOT NULL,
+	CONSTRAINT fk_State FOREIGN KEY(States) REFERENCES states(StID)
 );
 
 
