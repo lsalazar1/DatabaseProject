@@ -102,3 +102,64 @@ CREATE TABLE Route(
 );
 
 /* Insert different values into their respective tables */
+insert into Contact_Details Values(1, 'jimmyjohn@gmail.com', '949-232-4295', 'Bumpy RD',8);
+insert into Contact_Details Values(2, 'sallymay@gmail.com', '434-234-6746', 'London St.', 5);
+insert into Contact_Details Values(3, 'SeanPratt@yahoo.com', '765-345-2526', 'Champions Rd',3);
+insert into Contact_Details Values(4, 'Mary3822@gmail.com', '855-354-5474', 'Jurica Rd',1);
+insert into Contact_Details Values(5, 'Danny0493@gmail.com', '1-800-323-9111', 'PV Lane',7);
+
+insert into Discounts values(1,'Childrens','10', 'Discount is provided for children under 10 years old.');
+insert into Discounts values(2,'Disabilites Discount', '5', 'Discount is provided for customers with disabilites.');
+insert into Discounts values(3, 'Senior Discount','65', 'Discount is provided for adutls over the age of 65.');
+insert into Discounts values(4,'Deep Pockets Discount', '30','Discount is provided for upgrading to first class.');
+
+INSERT INTO AirFare VALUES (1, 'Atlanta', 'Miami', 128);
+INSERT INTO AirFare VALUES (2, 'Los Angeles', 'Houston', 112);
+INSERT INTO AirFare VALUES (3, 'Salt Lake City', 'Atlanta', 197);
+INSERT INTO AirFare VALUES (4, 'New York City', 'Charlotte', 159);
+INSERT INTO AirFare VALUES (5, 'Las Vegas', 'Denver', 154);
+INSERT INTO AirFare VALUES (6, 'Houston', 'Toronto', 547);
+
+INSERT INTO FlightSchedule VALUES (2144, 'ATL','MIA','10:30 AM','2:30 PM');
+INSERT INTO FlightSchedule VALUES (1441, 'LAX','IAH','7:00 AM', '11:00 AM');
+INSERT INTO FlightSchedule VALUES (7316, 'SLC','ATL', '5:00 PM', '9:00 PM');
+INSERT INTO FlightSchedule VALUES (1114, 'JFK','CLT', '10:20 AM', '3:55 PM');
+INSERT INTO FlightSchedule VALUES (2136, 'LAS','COS','6:00 AM', '8:50 AM');
+
+INSERT INTO states VALUES ('TX', 'Texas','USA');
+INSERT INTO states VALUES ('KS','Kansas','USA');
+INSERT INTO states VALUES ('CA', 'California','USA');
+INSERT INTO states VALUES ('GA', 'Atlanta', 'USA');
+INSERT INTO states VALUES ('UT', 'Utah', 'USA');
+INSERT INTO states VALUES ('ON', 'Ontario', 'CAN');
+INSERT INTO states VALUES ('LEN', 'Leinster', 'IRE');
+
+INSERT INTO branch VALUES(936, 'Panther Regional Headquarters', '100 University Dr.', 'Prairie View', 'TX');
+INSERT INTO branch VALUES(913, 'Greater Kansas City Branch', '2601 Holmes St.', 'Kansas City', 'KS');
+INSERT INTO branch VALUES(599, 'River Park Branch', '71 E Via la Plata', 'Fresno', 'CA');
+INSERT INTO branch VALUES(216, 'Katy Branch', '10326 Hartfield Bluff Ln.', 'Cypress', 'TX');
+INSERT INTO branch VALUES (570, 'Dunder Mifflen Regional Branch', '1725 Slough Avenue', 'Scranton', 'PA');
+INSERT INTO branch VALUES(978, 'Littleton Commons Branch', '550 King St.', 'Littleton', 'MA');
+
+INSERT INTO countries VALUES('USA', 'United States of America');
+INSERT INTO countries Values('CAN', 'Canada');
+INSERT INTO countries VALUES('IRE','Ireland');
+
+INSERT INTO employees VALUES ('E1', 'Shawn Smith', 936, 'Pilot', 'shawn.smith@pvair.com', '936-459-8159');
+INSERT INTO employees VALUES ('E2', 'Domonique Cox', 936, 'CFO', 'domonique.cox@pvair.com', '936-459-9981');
+INSERT INTO employees VALUES ('E3', 'Kirk Salazar', 599, 'Security Guard', 'kirk.salazar@pvair.com', '599-459-4786');
+INSERT INTO employees VALUES ('E4', 'Abrahan Ramirez', 216, 'Front End Developer', 'abrahan.ramirez@pvair.com', '216-459-5683');
+INSERT INTO employees VALUES ('E5', 'Michael Scott', 570, 'Regional Manager', 'michael.scott@pvair.com', '570-459-1234');
+INSERT INTO employees VALUES ('E6', 'Lisa Ann', 570, 'Marketing Manager', 'lisa.ann@pvair.com', '570-459-4563');
+INSERT INTO employees VALUES ('E7', 'Mary Livingston', 978, 'Backend Developer', 'mary.livingston@pvair.com', '978-459-8909');
+INSERT INTO employees VALUES ('E8', 'Leonard Guy', 978, 'Backend Developer', 'leonard.guy@pvair.com', '978-459-4785');
+
+INSERT INTO airCrafts VALUES (100, "N379AA", 245, "Boeing", "2004-03-23");
+INSERT INTO airCrafts VALUES (101, "N820AL", 372, "Airbus", "2011-06-02");
+INSERT INTO airCrafts VALUES (102, "N792AN", 382, "Cessna", "2010-04-13");
+INSERT INTO airCrafts VALUES (103, "N722AN", 298, "Embraer", "2008-10-19");
+
+INSERT INTO Route VALUES (10,"Dallas-Ft Worth", "Los Angeles", "KDFW-KLAX");
+INSERT INTO Route VALUES (11, "Portland","San Fransico","KPDX-KSFO");
+INSERT INTO Route VALUES (12, "Las Vegas","Denver","KLAS-KDEN");
+INSERT INTO Route VALUES (13, "Atlanta","New York","KATL-KJFK");
