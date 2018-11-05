@@ -1,16 +1,22 @@
-CREATE TABLE State( StID INT,
-             StateName Varchar(32),
-             Country Varchar(32),
-             PRIMARY KEY(StID),
+/*
+*StID data type switched to VARCHAR
+*Table name also changed b/c "state" is a reserved word
+*/ 
+
+CREATE TABLE states( StID VARCHAR(3),
+    StateName Varchar(32),
+    Country Varchar(32),
+    PRIMARY KEY(StID),
                    
                    
-             CONTRAINT fk_Country FOREIGN KEY (Country)
-             REFERENCES Countries (CtId)
-                  );
+    CONSTRAINT fk_Country FOREIGN KEY (Country)
+    REFERENCES countries (country_id)
+);
 
-
-INSERT INTO State VALUES (8, 'Texas','USA');
-INSERT INTO State VALUES (5,'Kansas','USA');
-INSERT INTO State VALUES (3, 'California','USA');
-INSERT INTO State VALUES (1, 'Atlanta', 'USA');
-INSERT INTO State VALUES (7, 'Utah', USA');
+INSERT INTO states VALUES ('TX', 'Texas','USA');
+INSERT INTO states VALUES ('KS','Kansas','USA');
+INSERT INTO states VALUES ('CA', 'California','USA');
+INSERT INTO states VALUES ('GA', 'Atlanta', 'USA');
+INSERT INTO states VALUES ('UT', 'Utah', 'USA');
+INSERT INTO states VALUES ('ON', 'Ontario', 'CAN')
+INSERT INTO states VALUES ('Leinster', 'LEN', 'IRE';)
