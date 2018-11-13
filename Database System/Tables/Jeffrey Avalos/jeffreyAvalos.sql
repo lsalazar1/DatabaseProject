@@ -21,6 +21,7 @@ CONSTRAINT fk_TransactionFlightNo FOREIGN KEY (flightNo)
     REFERENCES FlightSchedule(FS_ID) 
        
 );
+
 CREATE TABLE Passenger (
 orderID   INT PRIMARY KEY,
 passenger_ID  VARCHAR(8) PRIMARY KEY, 
@@ -32,6 +33,7 @@ contactID     VARCHAR(10) NOT NULL,
 CONSTRAINT fk_ContactDetails FOREIGN KEY (contactID)
     REFERENCES Contact_Details(cnID)
 );
+
 CREATE TABLE Charges(
 charge_ID   VARCHAR(8) PRIMARY KEY,
 title   VARCHAR(8) NOT NULL, 
