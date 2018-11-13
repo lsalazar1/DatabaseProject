@@ -17,7 +17,7 @@ CREATE TABLE countries (
 CREATE TABLE states( 
     StID VARCHAR(3) PRIMARY KEY,
     StateName Varchar(32),
-    Country Varchar(32),
+    Country Varchar(3),
                    
                    
     CONSTRAINT fk_Country FOREIGN KEY (Country)
@@ -30,7 +30,7 @@ create table Contact_Details(
 	Email VARCHAR(25) NOT NULL,
 	Cell VARCHAR(16) NOT NULL,
 	Street VARCHAR(64),
-	States VARCHAR(20) NOT NULL,
+	States VARCHAR(3) NOT NULL,
 	CONSTRAINT fk_State FOREIGN KEY(States) REFERENCES states(StID)
 );
 
@@ -65,7 +65,7 @@ CREATE TABLE branch (
     Location VARCHAR(50) NOT NULL,                  -- Location means name of branch (Ex. Copperfield)
     Address VARCHAR(50) NOT NULL,
     City VARCHAR(30) NOT NULL,
-    State_ID VARCHAR(2),
+    State_ID VARCHAR(3),
 
     CONSTRAINT fk_BranchState FOREIGN KEY (State_ID)
     REFERENCES states(StID)  
@@ -94,45 +94,20 @@ CREATE TABLE airCrafts(
 );
 
 -- Creates table for routes
-CREATE TABLE Route(
+CREATE TABLE routes(
     RtID INT PRIMARY KEY,
     Airport Varchar(32) NOT NULL,
     Destination Varchar(32) NOT NULL,
     RouteCode Varchar(16) NOT NULL UNIQUE
 );
 
-CREATE TABLE Transaction (
-orderID   INT PRIMARY KEY,
-bookingDate   DATE NOT NULL, 
-departureDate  DATE NOT NULL, 
-passenger_ID  VARCHAR(8) NOT NULL, 
-flightNo   INT(4) NOT NULL, 
-types     VARCHAR(10) NOT NULL, 
-employee_ID       VARCHAR(4) NOT NULL, 
-charge_ID   VARCHAR(8) NOT NULL, 
-Discount_ID   INT NOT NULL, 
-total     INT NOT NULL, 
-CONSTRAINT fk_TransactionPassenger FOREIGN KEY (passenger_ID)
-    REFERENCES Passenger(passenger_ID)
-CONSTRAINT fk_TransactionEmployee FOREIGN KEY (employee_ID)
-    REFERENCES employees(employee_ID)
-CONSTRAINT fk_TransactionCharges FOREIGN KEY (charge_ID)
-    REFERENCES Charges(charge_ID)
-CONSTRAINT fk_TransactionDiscount FOREIGN KEY (Discount_ID)
-    REFERENCES Discount(DiscountId) // this might be wrong.
-CONSTRAINT fk_TransactionFlightNo FOREIGN KEY (flightNo)
-    REFERENCES FlightSchedule(FS_ID) 
-       
-);
-
 CREATE TABLE Passenger (
-orderID   INT PRIMARY KEY,
 passenger_ID  VARCHAR(8) PRIMARY KEY, 
 flightNo   INT(4) NOT NULL, 
 address   VARCHAR(20) NOT NULL, 
 age     INT(3) NOT NULL, 
 citizenship  VARCHAR(15) NOT NULL, 
-contactID     VARCHAR(10) NOT NULL, 
+contactID     INT NOT NULL, 
 CONSTRAINT fk_ContactDetails FOREIGN KEY (contactID)
     REFERENCES Contact_Details(cnID)
 );
@@ -144,12 +119,29 @@ amount  DECIMAL(9,2) NOT NULL,
 desciption VARCHAR(10) NOT NULL 
 );
 
-/* Insert different values into their respective tables */
-insert into Contact_Details Values(1, 'jimmyjohn@gmail.com', '949-232-4295', 'Bumpy RD',8);
-insert into Contact_Details Values(2, 'sallymay@gmail.com', '434-234-6746', 'London St.', 5);
-insert into Contact_Details Values(3, 'SeanPratt@yahoo.com', '765-345-2526', 'Champions Rd',3);
-insert into Contact_Details Values(4, 'Mary3822@gmail.com', '855-354-5474', 'Jurica Rd',1);
-insert into Contact_Details Values(5, 'Danny0493@gmail.com', '1-800-323-9111', 'PV Lane',7);
+CREATE TABLE transactions (
+orderID   INT PRIMARY KEY,
+bookingDate   DATE NOT NULL, 
+departureDate  DATE NOT NULL, 
+passenger_ID  VARCHAR(8) NOT NULL, 
+flightNo   INT(4) NOT NULL, 
+types     VARCHAR(10) NOT NULL, 
+employee_ID       VARCHAR(4) NOT NULL, 
+charge_ID   VARCHAR(8) NOT NULL, 
+Discount_ID   INT NOT NULL, 
+total     INT NOT NULL,
+
+CONSTRAINT fk_TransactionPassenger FOREIGN KEY (passenger_ID)
+    REFERENCES Passenger(passenger_ID),
+CONSTRAINT fk_TransactionEmployee FOREIGN KEY (employee_ID)
+    REFERENCES employees(employee_ID),
+CONSTRAINT fk_TransactionCharges FOREIGN KEY (charge_ID)
+    REFERENCES Charges(charge_ID),
+CONSTRAINT fk_TransactionDiscount FOREIGN KEY (Discount_ID)
+    REFERENCES Discounts(DiscountId),
+CONSTRAINT fk_TransactionFlightNo FOREIGN KEY (flightNo)
+    REFERENCES FlightSchedule(FS_ID) 
+);
 
 insert into Discounts values(1,'Childrens','10', 'Discount is provided for children under 10 years old.');
 insert into Discounts values(2,'Disabilites Discount', '5', 'Discount is provided for customers with disabilites.');
@@ -169,6 +161,10 @@ INSERT INTO FlightSchedule VALUES (7316, 'SLC','ATL', '5:00 PM', '9:00 PM');
 INSERT INTO FlightSchedule VALUES (1114, 'JFK','CLT', '10:20 AM', '3:55 PM');
 INSERT INTO FlightSchedule VALUES (2136, 'LAS','COS','6:00 AM', '8:50 AM');
 
+INSERT INTO countries VALUES('USA', 'United States of America');
+INSERT INTO countries Values('CAN', 'Canada');
+INSERT INTO countries VALUES('IRE','Ireland');
+
 INSERT INTO states VALUES ('TX', 'Texas','USA');
 INSERT INTO states VALUES ('KS','Kansas','USA');
 INSERT INTO states VALUES ('CA', 'California','USA');
@@ -176,6 +172,8 @@ INSERT INTO states VALUES ('GA', 'Atlanta', 'USA');
 INSERT INTO states VALUES ('UT', 'Utah', 'USA');
 INSERT INTO states VALUES ('ON', 'Ontario', 'CAN');
 INSERT INTO states VALUES ('LEN', 'Leinster', 'IRE');
+INSERT INTO states VALUES ('MA', 'Massachusetts', 'USA');
+INSERT INTO states VALUES ('PA', 'Pennsylvania', 'USA');
 
 INSERT INTO branch VALUES(936, 'Panther Regional Headquarters', '100 University Dr.', 'Prairie View', 'TX');
 INSERT INTO branch VALUES(913, 'Greater Kansas City Branch', '2601 Holmes St.', 'Kansas City', 'KS');
@@ -183,10 +181,6 @@ INSERT INTO branch VALUES(599, 'River Park Branch', '71 E Via la Plata', 'Fresno
 INSERT INTO branch VALUES(216, 'Katy Branch', '10326 Hartfield Bluff Ln.', 'Cypress', 'TX');
 INSERT INTO branch VALUES (570, 'Dunder Mifflen Regional Branch', '1725 Slough Avenue', 'Scranton', 'PA');
 INSERT INTO branch VALUES(978, 'Littleton Commons Branch', '550 King St.', 'Littleton', 'MA');
-
-INSERT INTO countries VALUES('USA', 'United States of America');
-INSERT INTO countries Values('CAN', 'Canada');
-INSERT INTO countries VALUES('IRE','Ireland');
 
 INSERT INTO employees VALUES ('E1', 'Shawn Smith', 936, 'Pilot', 'shawn.smith@pvair.com', '936-459-8159');
 INSERT INTO employees VALUES ('E2', 'Domonique Cox', 936, 'CFO', 'domonique.cox@pvair.com', '936-459-9981');
@@ -205,7 +199,16 @@ INSERT INTO airCrafts VALUES (101, "N820AL", 372, "Airbus", "2011-06-02");
 INSERT INTO airCrafts VALUES (102, "N792AN", 382, "Cessna", "2010-04-13");
 INSERT INTO airCrafts VALUES (103, "N722AN", 298, "Embraer", "2008-10-19");
 
-INSERT INTO Route VALUES (10,"Dallas-Ft Worth", "Los Angeles", "KDFW-KLAX");
-INSERT INTO Route VALUES (11, "Portland","San Fransico","KPDX-KSFO");
-INSERT INTO Route VALUES (12, "Las Vegas","Denver","KLAS-KDEN");
-INSERT INTO Route VALUES (13, "Atlanta","New York","KATL-KJFK");
+INSERT INTO routes VALUES (10,"Dallas-Ft Worth", "Los Angeles", "KDFW-KLAX");
+INSERT INTO routes VALUES (11, "Portland","San Fransico","KPDX-KSFO");
+INSERT INTO routes VALUES (12, "Las Vegas","Denver","KLAS-KDEN");
+INSERT INTO routes VALUES (13, "Atlanta","New York","KATL-KJFK");
+
+/* Insert different values into their respective tables */
+insert into Contact_Details Values(1, 'jimmyjohn@gmail.com', '949-232-4295', 'Bumpy RD', 'TX');
+insert into Contact_Details Values(2, 'sallymay@gmail.com', '434-234-6746', 'London St.', 'MA');
+insert into Contact_Details Values(3, 'SeanPratt@yahoo.com', '765-345-2526', 'Champions Rd', 'MA');
+insert into Contact_Details Values(4, 'Mary3822@gmail.com', '855-354-5474', 'Jurica Rd', 'CA');
+insert into Contact_Details Values(5, 'Danny0493@gmail.com', '1-800-323-9111', 'PV Lane', 'TX');
+
+COMMIT;
