@@ -8,7 +8,7 @@ Airfare_ID INT,
 DepartFrom Varchar(32),
 ArriveTo Varchar(32),
 Fare INT, 
-PRIMARY KEY(Airfair_ID)
+PRIMARY KEY(Airfare_ID)
 );
 
 
