@@ -2,24 +2,14 @@ CREATE TABLE Transaction (
 orderID   INT PRIMARY KEY,
 bookingDate   DATE NOT NULL, 
 departureDate  DATE NOT NULL, 
-passenger_ID  VARCHAR(8) NOT NULL, 
+passenger_ID  VARCHAR(8) NOT NULL REFERENCES Passengers(PsID), 
 flightNo   INT(4) NOT NULL, 
 types     VARCHAR(10) NOT NULL, 
-employee_ID       VARCHAR(4) NOT NULL, 
-charge_ID   VARCHAR(8) NOT NULL, 
-Discount_ID   INT NOT NULL, 
-total     INT NOT NULL, 
-CONSTRAINT fk_TransactionPassenger FOREIGN KEY (passenger_ID)
-    REFERENCES Passenger(passenger_ID)
-CONSTRAINT fk_TransactionEmployee FOREIGN KEY (employee_ID)
-    REFERENCES employees(employee_ID)
-CONSTRAINT fk_TransactionCharges FOREIGN KEY (charge_ID)
-    REFERENCES Charges(charge_ID)
-CONSTRAINT fk_TransactionDiscount FOREIGN KEY (Discount_ID)
-    REFERENCES Discount(DiscountId) // this might be wrong.
-CONSTRAINT fk_TransactionFlightNo FOREIGN KEY (flightNo)
-    REFERENCES FlightSchedule(FS_ID) 
-       
+employee_ID       VARCHAR(4) NOT NULL  REFERENCES employees(employee_ID), 
+charge_ID   VARCHAR(8) NOT NULL REFERENCES Charges(charge_ID), 
+Discount_ID   INT NOT NULL   REFERENCES Discounts(DiscountId), 
+total     INT NOT NULL
+
 );
 
 create table Passengers(
