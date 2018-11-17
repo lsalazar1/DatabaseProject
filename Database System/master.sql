@@ -29,7 +29,8 @@ create table Contact_Details(
 	CnID INT PRIMARY KEY,
 	Email VARCHAR(25) NOT NULL,
 	Cell VARCHAR(16) NOT NULL,
-	Street VARCHAR(64),
+	Street VARCHAR(64) NOT NULL,
+    City VARCHAR(64) NOT NULL,
 	States VARCHAR(3) NOT NULL,
 	CONSTRAINT fk_State FOREIGN KEY(States) REFERENCES states(StID)
 );
@@ -102,21 +103,25 @@ CREATE TABLE routes(
 );
 
 CREATE TABLE Passenger (
-passenger_ID  VARCHAR(8) PRIMARY KEY, 
+passenger_ID  VARCHAR(8) PRIMARY KEY,
+fName VARCHAR(50) NOT NULL,
+lName VARCHAR(50) NOT NULL, 
 flightNo   INT(4) NOT NULL, 
-address   VARCHAR(20) NOT NULL, 
 age     INT(3) NOT NULL, 
 citizenship  VARCHAR(15) NOT NULL, 
-contactID     INT NOT NULL, 
+contactID     INT NOT NULL,
+
 CONSTRAINT fk_ContactDetails FOREIGN KEY (contactID)
-    REFERENCES Contact_Details(cnID)
+    REFERENCES Contact_Details(cnID),
+CONSTRAINT fk_PassengerFlight FOREIGN KEY (flightNo)
+    REFERENCES FlightSchedule(FS_ID)
 );
 
 CREATE TABLE Charges(
 charge_ID   VARCHAR(8) PRIMARY KEY,
 title   VARCHAR(8) NOT NULL, 
 amount  DECIMAL(9,2) NOT NULL, 
-desciption VARCHAR(10) NOT NULL 
+description VARCHAR(10) NOT NULL 
 );
 
 CREATE TABLE transactions (
@@ -205,10 +210,28 @@ INSERT INTO routes VALUES (12, "Las Vegas","Denver","KLAS-KDEN");
 INSERT INTO routes VALUES (13, "Atlanta","New York","KATL-KJFK");
 
 /* Insert different values into their respective tables */
-insert into Contact_Details Values(1, 'jimmyjohn@gmail.com', '949-232-4295', 'Bumpy RD', 'TX');
-insert into Contact_Details Values(2, 'sallymay@gmail.com', '434-234-6746', 'London St.', 'MA');
-insert into Contact_Details Values(3, 'SeanPratt@yahoo.com', '765-345-2526', 'Champions Rd', 'MA');
-insert into Contact_Details Values(4, 'Mary3822@gmail.com', '855-354-5474', 'Jurica Rd', 'CA');
-insert into Contact_Details Values(5, 'Danny0493@gmail.com', '1-800-323-9111', 'PV Lane', 'TX');
+insert into Contact_Details Values(1, 'jimmyjohn@gmail.com', '949-232-4295', 'Bumpy RD', 'Houston', 'TX');
+insert into Contact_Details Values(2, 'sallymay@gmail.com', '434-234-6746', 'London St.', 'Burlington', 'MA');
+insert into Contact_Details Values(3, 'SeanPratt@yahoo.com', '765-345-2526', 'Champions Rd', 'Somerville', 'MA');
+insert into Contact_Details Values(4, 'Mary3822@gmail.com', '855-354-5474', 'Jurica Rd', 'Bakersfield', 'CA');
+insert into Contact_Details Values(5, 'Danny0493@gmail.com', '1-800-323-9111', 'PV Lane', 'Prairie View', 'TX');
+insert into Contact_Details VALUES(6, 'sandra_1993@hotmail.com', '1-289-600-0796', '945 Simcoe St. North', 'Oshawa', 'ON');
+INSERT INTO Contact_Details VALUES(7, 'l.murray@gmail.com', '1 -289-567-9068', 'Liverpool Rd.', 'Pickering', 'ON');
+INSERT INTO Contact_Details VALUES(8, 'ryangivlas@gmail.com', '1-289-564-3456', 'Liverpool Rd.', 'Pickering', 'ON');
+INSERT INTO Contact_Details VALUES(9, 'hughes123@bulkbarn.com', '1-289-600-9450', 'King St.', 'Ajax', 'ON');
+
+
+INSERT INTO Passenger VALUES('P01', 'Jimmy', 'John', 2144,  23, 'American', 1);
+INSERT INTO Passenger VALUES('P02', 'Sally', 'May', 2144, 42, 'American', 2);
+INSERT INTO Passenger VALUES('P03', 'Sean', 'Pratt', 1441, 19, 'American', 3);
+INSERT INTO Passenger VALUES('P04', 'Mary', 'Beth', 1441, 50, 'American', 4);
+INSERT INTO Passenger VALUES('P05', 'Danny', 'D', 1441, 32, 'American', 5);
+INSERT INTO Passenger VALUES('P06', 'Sandra', 'Hayes', 2144, 24, 'Canadian', 6);
+INSERT INTO Passenger VALUES('P07', 'Laura', 'Murray', 1441, 26, 'Canadian', 7);
+INSERT INTO Passenger VALUES('P08', 'Ryan', 'Givelas', 1441, 26, 'Canadian', 8);
+INSERT INTO Passenger VALUES('P09', 'Stephanie', 'Hughes', 2136, 26, 'Canadian', 9);
+
+
+
 
 COMMIT;
