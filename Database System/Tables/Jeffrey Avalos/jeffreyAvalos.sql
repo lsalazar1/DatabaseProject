@@ -22,17 +22,19 @@ CONSTRAINT fk_TransactionFlightNo FOREIGN KEY (flightNo)
        
 );
 
-CREATE TABLE Passenger (
-orderID   INT PRIMARY KEY,
-passenger_ID  VARCHAR(8) PRIMARY KEY, 
-flightNo   INT(4) NOT NULL, 
-address   VARCHAR(20) NOT NULL, 
-age     INT(3) NOT NULL, 
-citizenship  VARCHAR(15) NOT NULL, 
-contactID     VARCHAR(10) NOT NULL, 
-CONSTRAINT fk_ContactDetails FOREIGN KEY (contactID)
-    REFERENCES Contact_Details(cnID)
+create table travelers(
+    PsID INT PRIMARY Key,
+    Name VARCHAR (32) NOT NULL,
+    Address VARCHAR (64) NOT NULL,
+    Age INT NOT NULL,
+    Nationality VARCHAR (16) NOT NULL,
+    Contacts INT  REFERENCES ContactDetails(ConID)
+
 );
+
+Insert INTO travelers VALUES(1,'Jimmy John','Bumpy Rd, Prairie View Tx',45,'USA',1);
+
+
 
 CREATE TABLE Charges(
 charge_ID   VARCHAR(8) PRIMARY KEY,
