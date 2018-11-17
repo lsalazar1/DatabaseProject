@@ -22,7 +22,7 @@ CONSTRAINT fk_TransactionFlightNo FOREIGN KEY (flightNo)
        
 );
 
-create table travelers(
+create table Passengers(
     PsID INT PRIMARY Key,
     Name VARCHAR (32) NOT NULL,
     Address VARCHAR (64) NOT NULL,
@@ -32,7 +32,7 @@ create table travelers(
 
 );
 
-Insert INTO travelers VALUES(1,'Jimmy John','Bumpy Rd, Prairie View Tx',45,'USA',1);
+Insert INTO Passengers VALUES(1,'Jimmy John','Bumpy Rd, Prairie View Tx',45,'USA',1);
 
 
 
