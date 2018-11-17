@@ -3,7 +3,7 @@
 *Employee Relation has data of PV Airways's employees
 */
 CREATE TABLE employees(
-    employee_ID VARCHAR(4) AUTO_INCREMENT PRIMARY KEY,
+    employee_ID VARCHAR(4) PRIMARY KEY,
     fullName VARCHAR(50) NOT NULL,
     Branch INT(3) NOT NULL,
     Position VARCHAR(50) NOT NULL,
