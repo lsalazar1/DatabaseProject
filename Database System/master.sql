@@ -119,9 +119,9 @@ CONSTRAINT fk_PassengerFlight FOREIGN KEY (flightNo)
 
 CREATE TABLE Charges(
 charge_ID   VARCHAR(8) PRIMARY KEY,
-title   VARCHAR(8) NOT NULL, 
+title   VARCHAR(256) NOT NULL, 
 amount  DECIMAL(9,2) NOT NULL, 
-description VARCHAR(10) NOT NULL 
+description VARCHAR(256) NOT NULL 
 );
 
 CREATE TABLE transactions (
@@ -231,7 +231,11 @@ INSERT INTO Passenger VALUES('P07', 'Laura', 'Murray', 1441, 26, 'Canadian', 7);
 INSERT INTO Passenger VALUES('P08', 'Ryan', 'Givelas', 1441, 26, 'Canadian', 8);
 INSERT INTO Passenger VALUES('P09', 'Stephanie', 'Hughes', 2136, 26, 'Canadian', 9);
 
-
-
+INSERT INTO Charges VALUES('5D22B1D5', 'Security', 150.00, 'Security Fee');
+INSERT INTO Charges VALUES('GHIB7253', 'Airline', 500.00, 'Airline ticket');
+INSERT INTO Charges VALUES('4F5D458W', 'Food', 50.00, 'Complementary Food');
+INSERT INTO Charges VALUES('54FDH5JW', 'Tax', 88.00, 'Taxes');
+INSERT INTO Charges VALUES('ZRTG5825', 'Bags', 100.00, 'Luggage Fee');
+INSERT INTO Charges VALUES('54DF78ED', 'Insurance', 90.00, 'Insurance Charge');
 
 COMMIT;
