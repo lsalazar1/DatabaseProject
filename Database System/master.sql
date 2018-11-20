@@ -91,7 +91,7 @@ CREATE TABLE airCrafts(
     AcNumber Varchar(32) NOT NULL,
     Capacity INT NOT NULL,
     MfdBy Varchar(128) NOT NULL,
-    MfdOn Datetime NOT NULL
+    MfdOn Date NOT NULL
 );
 
 -- Creates table for routes
