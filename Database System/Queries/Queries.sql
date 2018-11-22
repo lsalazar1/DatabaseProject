@@ -13,7 +13,7 @@ GROUP BY StateName
 ORDER By 2 DESC;
 
 --Jeffrey Avalos
-/*NOT DONE Business Question: Which passengers have more than one transaction(frequent fliers) and their charges? */
+/*NOT DONE Business Question: Which passengers have more than one transaction(frequent fliers) and their totals? */
 SELECT p.passenger_ID, p.fName, p.lname, t.total,
    COUNT(/*frequentflier*/) AS frequentFliers
 FROM Passenger p, transactions t
