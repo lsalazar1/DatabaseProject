@@ -37,4 +37,4 @@ ORDER by price ASC;
 UPDATE FlightSchedule 
 set Arrive = '4:55'
 where FS_ID = '1114';
-SELECT * FROM FlightSchedule; 
+SELECT * FROM FlightSchedule;
