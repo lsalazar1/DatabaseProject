@@ -10,7 +10,7 @@ FROM Contact_Details
 LEFT JOIN states
 ON Contact_Details.States = states.StID
 GROUP BY StateName
-ORDER By 2 DESC;
+ORDER BY 2 DESC;
 
 --Jeffrey Avalos
 /*NOT DONE Business Question: Which passengers have more than one transaction(frequent fliers) and their totals? */
@@ -23,3 +23,18 @@ FROM Passenger p, transactions t
 SELECT COUNT(DISTINCT p.passenger_ID) AS SeniorPassengerCount
 FROM Passenger p, Discounts d
 WHERE d.DiscountID = 3;
+
+
+--Domonique Cox
+/* Business Question: List all details of the airfare less than 150 in ascending order of price. */
+SELECT * FROM AirFare
+WHERE price < 150.00 
+and type in ('2','1')
+ORDER by price ASC;
+
+--Domonique Cox
+/*Business Question: Update the arrival time of FlightSchedule '1114' to '4:55'. Display all records of FlightSchedule table after update.*/
+UPDATE FlightSchedule 
+set Arrive = '4:55'
+where FS_ID = '1114';
+SELECT * FROM FlightSchedule; 
