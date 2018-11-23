@@ -12,6 +12,16 @@ ON Contact_Details.States = states.StID
 GROUP BY StateName
 ORDER BY 2 DESC;
 
+-- Liam Salazar
+/* Business Question: Who are employees that at are frontend developers and backend developers in the state of Massaschusetts */
+SELECT employees.employee_ID, employees.fullName, branch.Location, branch.City, branch.State_ID
+FROM employees
+INNER JOIN branch
+ON employees.Branch = branch.branch_ID
+WHERE (employees.Position = 'Backend Developer' OR employees.Position = 'Frontend Developer')    
+AND branch.State_ID = 'MA'
+ORDER BY 2 ASC;
+
 --Jeffrey Avalos
 /*NOT DONE Business Question: Which passengers have more than one transaction(frequent fliers) and their totals? */
 SELECT p.passenger_ID, p.fName, p.lname, t.total,
