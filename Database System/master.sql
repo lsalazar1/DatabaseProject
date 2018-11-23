@@ -186,6 +186,7 @@ INSERT INTO branch VALUES(599, 'River Park Branch', '71 E Via la Plata', 'Fresno
 INSERT INTO branch VALUES(216, 'Katy Branch', '10326 Hartfield Bluff Ln.', 'Cypress', 'TX');
 INSERT INTO branch VALUES (570, 'Dunder Mifflen Regional Branch', '1725 Slough Avenue', 'Scranton', 'PA');
 INSERT INTO branch VALUES(978, 'Littleton Commons Branch', '550 King St.', 'Littleton', 'MA');
+INSERT INTO branch VALUES(617, 'Cambridge Branch', '1 Rogers St.', 'Cambridge', 'MA');
 
 INSERT INTO employees VALUES ('E1', 'Shawn Smith', 936, 'Pilot', 'shawn.smith@pvair.com', '936-459-8159');
 INSERT INTO employees VALUES ('E2', 'Domonique Cox', 936, 'CFO', 'domonique.cox@pvair.com', '936-459-9981');
@@ -198,6 +199,9 @@ INSERT INTO employees VALUES ('E8', 'Leonard Guy', 978, 'Backend Developer', 'le
 INSERT INTO employees VALUES ('E9', 'Daniel Chadwick', 978, 'Backend Developer', 'Daniel.chadwick@pvair.com', '978-459-9456');
 INSERT INTO employees VALUES ('E10', 'Liam Salazar', 599, 'Janitor', 'liam.salazar@pvair.com', '599-459-8453');
 INSERT INTO employees VALUES ('E11', 'Hubert Joly', 599, 'Frontend Developer', 'hubert.joly@pvair.com', '599-459-9011');
+INSERT INTO employees VALUES ('E12', 'Riley Reid', 617, 'Frontend Developer', 'riley.reid@pvair.com', '978-459-0956');
+INSERT INTO employees VALUES ('E13', 'Dwight Scrute', 617, 'Frontend Developer', 'dwight.schrute@pvair.com', '978-459-8746');
+INSERT INTO employees VALUES ('E14', 'Toby Flenderson', 617, 'Backend Developer', 'dwight.schrute@pvair.com', '978-459-8746');
 
 INSERT INTO airCrafts VALUES (100, "N379AA", 245, "Boeing", "2004-03-23");
 INSERT INTO airCrafts VALUES (101, "N820AL", 372, "Airbus", "2011-06-02");
