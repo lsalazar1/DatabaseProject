@@ -73,3 +73,11 @@ select employee_ID, fullName, position
      city = 'Prairie View');
 
 
+
+--Abrahan Ramirez
+/*Show the employee's full name and thier branch Id*/
+
+select employees.fullName, branch.branch_ID
+     from employees
+     inner join branch
+     on employees.Branch = branch.branch_ID;
