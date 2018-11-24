@@ -55,3 +55,22 @@ SELECT * FROM FlightSchedule;
 /*Show the number of disconts offered and show the discounts most used by passengers*/
 
 
+
+
+
+
+
+
+
+
+--Abrahan Ramirez
+/*Find all the staff who work in the city Prairie View*/
+select employee_ID, fullName, position
+     from employees E
+     where exists
+     (select*
+     from branch B
+     where E.Branch = B.branch_ID and
+     city = 'Prairie View');
+
+
