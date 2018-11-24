@@ -24,9 +24,9 @@ ORDER BY 2 ASC;
 
 --Jeffrey Avalos
 /*Business Question: Which passengers have more than one transaction(frequent fliers) and their totals? */
-SELECT p.passenger_ID, p.fName, p.lname, t.total,
-   COUNT(/*frequentflier*/) AS frequentFliers
+SELECT p.passenger_ID, fName, lname
 FROM Passenger p, transactions t
+WHERE distinct t.passenger_ID, flightNo from transactions;
 
 --Jeffrey Avalos
 /* Business Question: Which Passengers have used the Senior discount? */
