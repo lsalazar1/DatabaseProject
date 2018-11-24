@@ -52,14 +52,13 @@ SELECT * FROM FlightSchedule;
 
 
 --Abrahan Ramirez
-/*Show the number of disconts offered and show the discounts most used by passengers*/
-
-
-
-
-
-
-
+/*Show the discounts chosen during the transactions then use the discounts table to identify them*/
+SELECT transactions.orderID, transactions.bookingDate, transactions.passenger_ID,
+   transactions.charge_ID, transactions.Discount_ID
+    , discounts.Title, discounts.Amount, discounts.Description
+    FROM transactions
+    LEFT OUTER JOIN discounts
+    ON transactions.Discount_ID = discounts.DiscountId;
 
 
 
