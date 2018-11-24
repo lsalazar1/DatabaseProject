@@ -85,3 +85,12 @@ select employees.fullName, branch.branch_ID
      from employees
      inner join branch
      on employees.Branch = branch.branch_ID;
+     
+     
+     
+--Abrahan Ramirez
+/*Show the number of employees that work at eac branch.*/
+
+select branch, count(employee_ID) as myCount
+     from employees
+     group by branch;
