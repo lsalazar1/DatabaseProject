@@ -23,17 +23,16 @@ AND branch.State_ID = 'MA'
 ORDER BY 2 ASC;
 
 --Jeffrey Avalos
-/*NOT DONE Business Question: Which passengers have more than one transaction(frequent fliers) and their totals? */
+/*Business Question: Which passengers have more than one transaction(frequent fliers) and their totals? */
 SELECT p.passenger_ID, p.fName, p.lname, t.total,
    COUNT(/*frequentflier*/) AS frequentFliers
 FROM Passenger p, transactions t
-/*Work in progress*/
---Jeffrey Avalos
-/* Business Question: How many Passengers have used the Senior discount? */
-SELECT COUNT(DISTINCT p.passenger_ID) AS SeniorPassengerCount
-FROM Passenger p, Discounts d
-WHERE d.DiscountID = 3;
 
+--Jeffrey Avalos
+/* Business Question: Which Passengers have used the Senior discount? */
+SELECT DISTINCT p.passenger_ID, fname, lname 
+FROM transactions t, Passenger P
+WHERE t.passenger_ID = p.passenger_ID AND t.Discount_ID = 3;
 
 --Domonique Cox
 /* Business Question: List all details of the airfare less than 150 in ascending order of price. */
@@ -81,19 +80,3 @@ select employees.fullName, branch.branch_ID
      from employees
      inner join branch
      on employees.Branch = branch.branch_ID;
-
-
-
---Abrahan Ramirez
-/* find number of staff in each branch*/
-
-select branch, count(employee_ID) as myCount
-     from employees
-     group by branch
-     order by branch;
-
-
-
-
-
-
