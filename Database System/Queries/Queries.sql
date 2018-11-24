@@ -23,10 +23,12 @@ AND branch.State_ID = 'MA'
 ORDER BY 2 ASC;
 
 --Jeffrey Avalos
-/*Business Question: Which passengers have more than one transaction(frequent fliers) and their totals? */
+/*Business Question: Which passengers have more than one transaction(frequent fliers)? */
 SELECT p.passenger_ID, fName, lname
 FROM Passenger p, transactions t
-WHERE distinct t.passenger_ID, flightNo from transactions;
+WHERE p.passenger_ID =  t.passenger_ID
+GROUP BY fName
+HAVING COUNT(t.passenger_ID) > 1;
 
 --Jeffrey Avalos
 /* Business Question: Which Passengers have used the Senior discount? */
