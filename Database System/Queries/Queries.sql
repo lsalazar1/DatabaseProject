@@ -81,3 +81,19 @@ select employees.fullName, branch.branch_ID
      from employees
      inner join branch
      on employees.Branch = branch.branch_ID;
+
+
+
+--Abrahan Ramirez
+/* find number of staff in each branch*/
+
+select branch, count(employee_ID) as myCount
+     from employees
+     group by branch
+     order by branch;
+
+
+
+
+
+
