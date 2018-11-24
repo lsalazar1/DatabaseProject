@@ -1,7 +1,3 @@
-/*Select all the flights going to MIAMI.
-List the prices of the flights leaving before 1pm.
-*/
-
 -- Liam Salazar
 /* Business Question: How many passengers are from each state/province? Show results in desending order. */
 SELECT states.StateName, 
@@ -21,6 +17,14 @@ ON employees.Branch = branch.branch_ID
 WHERE (employees.Position = 'Backend Developer' OR employees.Position = 'Frontend Developer')    
 AND branch.State_ID = 'MA'
 ORDER BY 2 ASC;
+
+-- Liam Salazar
+/* What state or province from the "states" table belongs to Ireland? */
+SELECT StID, StateName, countries.country
+FROM states
+INNER JOIN countries
+ON states.Country = countries.country_id
+WHERE countries.country_id = 'IRE';
 
 --Jeffrey Avalos
 /*Business Question: Which passengers have more than one transaction(frequent fliers) and their totals? */
@@ -75,7 +79,6 @@ select employee_ID, fullName, position
 
 --Abrahan Ramirez
 /*Show the employee's full name and thier branch Id*/
-
 select employees.fullName, branch.branch_ID
      from employees
      inner join branch
