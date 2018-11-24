@@ -41,18 +41,18 @@ FROM transactions t, Passenger P
 WHERE t.passenger_ID = p.passenger_ID AND t.Discount_ID = 3;
 
 --Domonique Cox
-/* Business Question: List all details of the airfare less than 150 in ascending order of price. */
-SELECT * FROM AirFare
-WHERE price < 150.00 
-and type in ('2','1')
-ORDER by price ASC;
+/* Business Question: List all details of the airfare less than 150 in ascending order of price.*/
+--SELECT * FROM AirFare
+--WHERE price < 150.00 
+--and type in ('2','1')
+--ORDER by price ASC;
 
 --Domonique Cox
 /*Business Question: Update the arrival time of FlightSchedule '1114' to '4:55'. Display all records of FlightSchedule table after update.*/
-UPDATE FlightSchedule 
-set Arrive = '4:55'
-where FS_ID = '1114';
-SELECT * FROM FlightSchedule;
+--UPDATE FlightSchedule 
+--set Arrive = '4:55'
+--where FS_ID = '1114';
+--SELECT * FROM FlightSchedule;
 
 
 
