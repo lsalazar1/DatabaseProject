@@ -48,3 +48,10 @@ UPDATE FlightSchedule
 set Arrive = '4:55'
 where FS_ID = '1114';
 SELECT * FROM FlightSchedule;
+
+
+
+--Abrahan Ramirez
+/*Show the number of disconts offered and show the discounts most used by passengers*/
+
+
