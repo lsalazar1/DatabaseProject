@@ -26,6 +26,13 @@ INNER JOIN countries
 ON states.Country = countries.country_id
 WHERE countries.country_id = 'IRE';
 
+--Liam Salazar
+/* Business Question: Where are the passengers from? */
+SELECT passenger.fName, passenger.lName, Contact_Details.City, Contact_Details.States
+FROM passenger
+INNER JOIN Contact_Details
+ON passenger.contactID = Contact_Details.CnID;
+
 --Jeffrey Avalos
 /*Business Question: Which passengers have more than one transaction(frequent fliers)? */
 SELECT p.passenger_ID, fName, lname
@@ -90,7 +97,6 @@ select employees.fullName, branch.branch_ID
      
 --Abrahan Ramirez
 /*Show the number of employees that work at eac branch.*/
-
 select branch, count(employee_ID) as myCount
      from employees
      group by branch;
