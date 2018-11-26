@@ -47,6 +47,8 @@ SELECT DISTINCT p.passenger_ID, fname, lname
 FROM transactions t, Passenger P
 WHERE t.passenger_ID = p.passenger_ID AND t.Discount_ID = 3;
 
+-- These queries don't really correspond with what Dr. Kim was asking for. Please revise --
+
 --Domonique Cox
 /* Business Question: List all details of the airfare less than 150 in ascending order of price.*/
 --SELECT * FROM AirFare
@@ -60,7 +62,7 @@ WHERE t.passenger_ID = p.passenger_ID AND t.Discount_ID = 3;
 --set Arrive = '4:55'
 --where FS_ID = '1114';
 --SELECT * FROM FlightSchedule;
-
+---------------------------------------------------------------------------------------------------
 
 
 --Abrahan Ramirez
